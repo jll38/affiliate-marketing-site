@@ -12,7 +12,11 @@ export default function Home() {
     <>
       <Head>
         <title>Homesync Guru</title>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Explore HomeSyncHub for expert advice, in-depth reviews, and smart home automation tips to transform your living space into a connected, intelligent haven."
+        />
       </Head>
       <Navbar />
       <main className="text-white">
@@ -40,10 +44,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-        <section className="pt-24 md:mt-0 md:h-screen flex justify-center  md:text-left md:flex-row md:justify-between lg:px-48 md:px-12 px-4 text-black">
-          <div></div>
-          <div></div>
         </section>
       </main>
 
