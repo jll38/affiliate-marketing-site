@@ -38,7 +38,9 @@ export default function Home() {
                 Intelligent Living Space
               </p>
               <div className="font-montserrat">
-                <button className="bg-red-500/75 px-6 py-4 rounded-lg border-2 border-red-500/25 border-solid text-white mr-2 mb-2">
+                <button onClick={() => {
+                  window.location.assign('/blog');
+                }} className="bg-red-500/75 px-6 py-4 rounded-lg border-2 border-red-500/25 border-solid text-white mr-2 mb-2">
                   View our Blog
                 </button>
               </div>

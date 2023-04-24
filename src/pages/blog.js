@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
+import Image from "next/image";
 import Date from "@/components/date";
 import { Navbar } from "@/components/Navbar";
 export default function Blog({ allPostsData }) {
@@ -18,7 +19,7 @@ export default function Blog({ allPostsData }) {
       <main name="Homesync Blog" className="pt-24 md:mt-0 md:h-screen flex justify-center  md:text-left md:flex-row md:justify-between lg:px-48 md:px-12 px-4 text-black">
         <div>
           <ul>
-            {allPostsData.map(({ id, date, title }) => (
+            {allPostsData.map(({ id, date, title, thumbnail }) => (
               <li key={id}>
                 <Link
                   href={`/blog/${id}`}
@@ -26,6 +27,7 @@ export default function Blog({ allPostsData }) {
                 >
                   {title}
                 </Link>
+                <Image src={thumbnail} width='80' height='200'/>
                 <br />
                 <small>
                   <Date dateString={date} />

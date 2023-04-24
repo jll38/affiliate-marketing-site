@@ -38,7 +38,7 @@ export default function Post({ postData }) {
   </Head>
   <Navbar />
   <div className='pt-24 md:mt-0 md:h-screen flex justify-center text-center md:text-left md:flex-row md:justify-between items-start lg:px-48 md:px-12 px-4 backdrop-blur-sm bg-opacity-50 bg-gray-200 overflow-hidden'>
-    <article className='md:flex-1 md:mr-10 md:w-2/3 md:border-r md:min-h-full md:mr-10 pr-5'>
+    <article className='md:flex-1 md:mr-10 md:w-2/3 md:border-r md:min-h-full md:mr-10 pr-5 mt-10'>
       <div name='return-nav'>
         <Link href='/blog'>&#8592; Go Back</Link>
       </div>
