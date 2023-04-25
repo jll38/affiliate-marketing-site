@@ -38,7 +38,8 @@ export default function Blog() {
       >
         <div>blog posts</div>
         {blogPosts.map((blog) => (
-          <div key={blog._id}>{blog.name}</div>
+
+          <BlogCard key={blog._id} date={blog._createAt} img={blog.image}>{blog.name}</BlogCard>
         ))}
       </main>
     </>
