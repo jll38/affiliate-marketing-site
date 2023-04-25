@@ -19,7 +19,7 @@ export default function Home() {
         />
       </Head>
       <Navbar />
-      <main className="text-white">
+      <main className="text-white animate-fadein">
         <section
           name="Hero"
           className="bg-secondary bg-[url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-cover"

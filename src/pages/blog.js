@@ -24,7 +24,7 @@ export default function Blog({ allPostsData }) {
       >
         <div>
           <h1 className="text-4xl font-bold mb-2 divider">Trending</h1>
-          <ul>
+          <ul className="animate-fadein">
             {allPostsData.map(({ id, date, title, thumbnail, category}) => (
               <li key={id}>
                 <br />
