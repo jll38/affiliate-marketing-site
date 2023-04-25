@@ -5,7 +5,7 @@ export function Navbar({}) {
   return (
     <>
       {" "}
-      <nav className="fixed flex justify-center py-1 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10 bg-white">
+      <nav className="fixed flex justify-center py-1 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10 bg-white md:shadow-lg">
         <div className="flex items-center mx-5 text-gray-500 hover:underline">
           <Link href="/blog">Blog</Link>
         </div>

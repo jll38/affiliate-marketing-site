@@ -3,7 +3,7 @@ import React from "react";
 function BlogCard({ ...props }) {
   return (
     <>
-      <div class="max-w-xs rounded overflow-hidden shadow-lg">
+      <div class="max-w-xs rounded overflow-hidden shadow-lg bg-white">
         <img class="w-full h-52" src={props.img} alt="Sunset in the mountains"/>
         <div class="px-6 pt-4">
           <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
