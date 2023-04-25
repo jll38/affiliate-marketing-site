@@ -1,9 +1,9 @@
 ---
 title: "Welcome to Home Sync Hub: Your Source for Smart Home Technology!"
 date: "2023-04-24"
+category: "Message From the Team"
 thumbnail: "/images/homesynchub.png"
 ---
-
 
 Hello and welcome to Home Sync Hub, your ultimate destination for everything related to smart home technology and automation! This is our very first blog post, and we're thrilled to be able to share our passion for smart home products with you.
 

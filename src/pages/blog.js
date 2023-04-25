@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Date from "@/components/date";
 import { Navbar } from "@/components/Navbar";
+import BlogCard from "@/components/BlogCard";
+import { ca } from "date-fns/locale";
 export default function Blog({ allPostsData }) {
   return (
     <>
@@ -16,35 +18,34 @@ export default function Blog({ allPostsData }) {
         />
       </Head>
       <Navbar />
-      <main name="Homesync Blog" className="pt-24 md:mt-0 md:h-screen flex justify-center  md:text-left md:flex-row md:justify-between lg:px-48 md:px-12 px-4 text-black">
+      <main
+        name="Homesync Blog"
+        className="pt-24 md:mt-0 md:h-screen flex justify-center  md:text-left md:flex-row md:justify-between lg:px-48 md:px-12 px-4 text-black"
+      >
         <div>
+          <h1 className="text-4xl font-bold mb-2 divider">Trending</h1>
           <ul>
-            {allPostsData.map(({ id, date, title, thumbnail }) => (
+            {allPostsData.map(({ id, date, title, thumbnail, category}) => (
               <li key={id}>
-                <Link
-                  href={`/blog/${id}`}
-                  className="text-2xl"
-                >
-                  {title}
-                </Link>
-                <Image src={thumbnail} width='80' height='200'/>
                 <br />
-                <small>
-                  <Date dateString={date} />
-                </small>
+                <BlogCard
+                  img={thumbnail}
+                  category={category}
+                  date={
+                    <small>
+                      <Date dateString={date} />
+                    </small>
+                  }
+                >
+                  <Link href={`/blog/${id}`} className="text-1xl">
+                    {title}
+                  </Link>
+                </BlogCard>
               </li>
             ))}
           </ul>
         </div>
       </main>
-      <div className="flex min-h-screen flex-col px-16 md:px-48 content-center justify-center items-center">
-        <section className="flex flex-col">
-          <Link href="/">&#8592; Go Home</Link>
-          <h1 className="text-4xl text-transparent bg-clip-text bg-gradient-to-t from-purple-500 to-red-700 font-bold mb-2 divider">
-            Blog
-          </h1>
-        </section>
-      </div>
     </>
   );
 }
