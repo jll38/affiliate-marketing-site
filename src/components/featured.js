@@ -2,22 +2,22 @@ import React from "react";
 
 function Featured({ ...props }) {
   return (
-    <div
-      name="featured"
-      className="flex flex-col flex-none w-52 mb-10 md:mb-0 lg:mb-0 flex-grow md:mr-10 rounded-lg overflow-hidden"
-    >
-      <h1 className="mt-5 mb-5 font-semibold text-3xl">Featured</h1>
-      <img class="w-full h-3/4" src={props.img} alt={props.imgAlt} />
-      <div class="px-6 pt-4">
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-          {props.category}
-        </span>
+    <>
+      <div className="mb-10 md:mb-0 lg:mb-0 lg:w-auto shadow-md rounded-2xl bg-white overflow-hidden">
+        <div className="max-w-xl ">
+          <img className="w-full h-96" src={props.img} alt={props.imgAlt} />
+          <div className="px-6 pt-4">
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 max-w-md">
+              {props.category}
+            </span>
+          </div>
+          <div className="px-6 py-4">
+            <div className="font-bold text-3xl mb-2">{props.children}</div>
+            <p className="text-gray-700 text-base">{props.date}</p>
+          </div>
+        </div>
       </div>
-      <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">{props.children}</div>
-        <p class="text-gray-700 text-base">{props.date}</p>
-      </div>
-    </div>
+    </>
   );
 }
 

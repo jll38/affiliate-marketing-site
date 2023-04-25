@@ -7,6 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import BlogCard from "@/components/BlogCard";
 import { ca } from "date-fns/locale";
 import Featured from "@/components/featured";
+
 export default function Blog({ allPostsData }) {
   return (
     <>
@@ -21,30 +22,48 @@ export default function Blog({ allPostsData }) {
       <Navbar />
       <main
         name="Homesync Blog"
-        className="pt-24 md:mt-0 md:h-screen flex justify-center  md:text-left md:flex-row md:justify-between lg:px-48 md:px-12 px-4 text-black flex-wrap bg-gray-100"
+        className="pt-24 md:m-0 md:min-h-screen md:text-left md:flex-row md:justify-between lg:px-48 md:px-12 px-4 text-black bg-gray-100 animate-fadein"
       >
-        <Featured img='https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' imgAlt='Test' date='Date' category='Test'>Bababooey</Featured>
-        <div className="mt-10">
-          <ul className="animate-fadein flex-1">
-            {allPostsData.map(({ id, date, title, thumbnail, category }) => (
-              <li key={id}>
-                <br />
-                <BlogCard
-                  img={thumbnail}
-                  category={category}
-                  date={
-                    <small>
-                      <Date dateString={date} />
-                    </small>
-                  }
-                >
-                  <Link href={`/blog/${id}`} className="text-1xl">
-                    {title}
-                  </Link>
-                </BlogCard>
-              </li>
-            ))}
-          </ul>
+        <div className="flex flex-row flex-wrap mb-10 items-center justify-center gap-7">
+          <Featured
+            img="https://thumbs.dreamstime.com/b/led-strip-dark-gray-background-diode-type-electric-lamp-164224251.jpg"
+            imgAlt="Featured Image"
+            date="April 25, 2023"
+            category="Decore"
+            className="mb-4"
+          >
+            You&apos;re using LED Strips wrong: 10 Ways to Spruce up Your Home
+            With LEDs
+          </Featured>
+          <Featured
+            img="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            imgAlt="Featured Image"
+            date="Date"
+            category="Test"
+            className="mb-4"
+          >
+            Discover Insights, Tips, and Reviews for a Connected, Intelligent
+            Living Space
+          </Featured>
+        </div>
+        <div className="flex flex-row flex-wrap w-full gap-5 items-center justify-center">
+          {allPostsData.map(({ id, date, title, thumbnail, category }) => (
+            <div key={id} className="mb-4">
+              <BlogCard
+                img={thumbnail}
+                category={category}
+                date={
+                  <small>
+                    <Date dateString={date} />
+                  </small>
+                }
+              >
+                <Link href={`/blog/${id}`} className="text-1xl">
+                  {title}
+                </Link>
+              </BlogCard>
+            </div>
+          ))}
         </div>
       </main>
     </>
