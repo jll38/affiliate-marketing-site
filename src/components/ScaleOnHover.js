@@ -5,7 +5,7 @@ const ScaleOnHover = ({ children }) => {
   const [hovered, setHovered] = useState(false);
 
   const animation = useSpring({
-    transform: hovered ? 'scale(1.1)' : 'scale(1)',
+    transform: hovered ? 'scale(1.05)' : 'scale(1)',
   });
 
   return (

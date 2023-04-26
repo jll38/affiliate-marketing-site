@@ -13,7 +13,7 @@ export default function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const placeHolders = [];
-  for(let i = 0; i < 20; i++){
+  for (let i = 0; i < 20; i++) {
     placeHolders.push(<PlaceholderCard />);
   }
 
@@ -40,27 +40,27 @@ export default function Blog() {
       <Navbar />
       <main
         name="Homesync Blog"
-        className="pt-32 md:m-0 md:min-h-screen md:text-left lg:px-48 md:px-12 px-4 text-black bg-gray-100 animate-fadein"
+        className="pt-32 md:m-0 md:min-h-screen md:text-left lg:px-40 md:px-12 px-4 text-black bg-gray-100 animate-fadein pb-10"
       >
-        <h1 className="text-3xl font-semibold text-center md:text-left">Home Sync Blog</h1>
+        <h1 className="text-3xl font-semibold text-center md:text-left">
+          Home Sync Blog
+        </h1>
         <Divider />
-        <div className="flex flex-row flex-wrap lg:justify-start md:items-center justify-center">
+        <div className="flex flex-row flex-wrap  md:items-center justify-center">
           {loading ? (
-            <>
-              {placeHolders.map((placeholder) => (placeholder))}
-
-            </>
+            <>{placeHolders.map((placeholder) => placeholder)}</>
           ) : (
             <>
               {blogPosts.map((blog) => (
-                <BlogCard
-                  key={blog._id}
-                  date={blog._createdAt}
-                  img={blog.image}
-                  category={blog.category}
-                >
-                  {blog.name}
-                </BlogCard>
+                <Link key={blog._id} href={"/blog/" + blog.slug}>
+                  <BlogCard
+                    date={blog._createdAt}
+                    img={blog.image}
+                    category={blog.category}
+                  >
+                    {blog.name}
+                  </BlogCard>
+                </Link>
               ))}
             </>
           )}

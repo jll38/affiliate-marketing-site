@@ -26,25 +26,6 @@ export function Navbar({}) {
           </Link>
         </div>
       </nav>
-      <div
-        id="mobileNav"
-        className="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down"
-      >
-        <div id="hideMenu" className="flex justify-end">
-          <img src="dist/assets/logos/Cross.svg" alt="" className="h-16 w-16" />
-        </div>
-        <ul className="font-montserrat flex flex-col mx-8 my-24 items-center text-3xl">
-          <li className="my-6">
-            <a href="howitworks">How it works</a>
-          </li>
-          <li className="my-6">
-            <a href="features">Features</a>
-          </li>
-          <li className="my-6">
-            <a href="pricing">Pricing</a>
-          </li>
-        </ul>
-      </div>
     </>
   );
 }
