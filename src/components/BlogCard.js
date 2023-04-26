@@ -9,7 +9,7 @@ function BlogCard({ ...props }) {
         <img
           className="w-full px-6 max-h-52"
           src={props.img}
-          alt="Sunset in the mountains"
+          alt={props.alt}
         />
 
         <div className="px-6">

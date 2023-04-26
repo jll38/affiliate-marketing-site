@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { getProducts } from "../../sanity/sanity-utils";
 import PlaceholderCard from "@/components/PlaceholderCard";
 import Divider from "@/components/Divider";
+import ProductCard from "@/components/ProductCard";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
@@ -20,6 +21,7 @@ export default function Products() {
     async function fetchProducts() {
       const products = await getProducts();
       setProducts(products);
+      console.log(products);
       setLoading(false);
     }
 
@@ -52,7 +54,7 @@ export default function Products() {
           ) : (
             <>
               {products.map((product) => (
-                  <div key={product._id}>{product.name}</div>
+                  <ProductCard key={product._id} img={product.image} category={product.category} price={product.price}>{product.name}</ProductCard>
               ))}
             </>
           )}
