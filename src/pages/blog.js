@@ -10,10 +10,15 @@ import Featured from "@/components/featured";
 import { getBlog } from "../../sanity/sanity-utils";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import PlaceholderCard from "@/components/PlaceholderCard";
+import Divider from "@/components/Divider";
 
 export default function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const placeHolders = [];
+  for(let i = 0; i < 20; i++){
+    placeHolders.push(<PlaceholderCard />);
+  }
 
   useEffect(() => {
     async function fetchBlogPosts() {
@@ -38,29 +43,31 @@ export default function Blog() {
       <Navbar />
       <main
         name="Homesync Blog"
-        className="pt-24 md:m-0 md:min-h-screen md:text-left flex-row md:justify-center items-center lg:px-48 md:px-12 px-4 text-black bg-gray-100 animate-fadein divide-y-4"
+        className="pt-32 md:m-0 md:min-h-screen md:text-left lg:px-48 md:px-12 px-4 text-black bg-gray-100 animate-fadein"
       >
-        <h1 className="text-3xl">Home Sync Blog</h1>
-        {loading ? (
-          <>
-            <PlaceholderCard />
-            <PlaceholderCard />
-            <PlaceholderCard />
-          </>
-        ) : (
-          <>
-            {blogPosts.map((blog) => (
-              <BlogCard
-                key={blog._id}
-                date={blog._createdAt}
-                img={blog.image}
-                category={blog.category}
-              >
-                {blog.name}
-              </BlogCard>
-            ))}
-          </>
-        )}
+        <h1 className="text-3xl font-semibold">Home Sync Blog</h1>
+        <Divider />
+        <div className="flex flex-row flex-wrap lg:justify-start md:items-center justify-center">
+          {loading ? (
+            <>
+              {placeHolders.map((placeholder) => (placeholder))}
+
+            </>
+          ) : (
+            <>
+              {blogPosts.map((blog) => (
+                <BlogCard
+                  key={blog._id}
+                  date={blog._createdAt}
+                  img={blog.image}
+                  category={blog.category}
+                >
+                  {blog.name}
+                </BlogCard>
+              ))}
+            </>
+          )}
+        </div>
       </main>
     </>
   );
