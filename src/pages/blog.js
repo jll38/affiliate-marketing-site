@@ -2,13 +2,10 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import Date from "@/components/date";
 import { Navbar } from "@/components/Navbar";
 import BlogCard from "@/components/BlogCard";
-import { ca } from "date-fns/locale";
-import Featured from "@/components/featured";
 import { getBlog } from "../../sanity/sanity-utils";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import { Footer } from "@/components/Footer";
 import PlaceholderCard from "@/components/PlaceholderCard";
 import Divider from "@/components/Divider";
 
@@ -69,6 +66,7 @@ export default function Blog() {
           )}
         </div>
       </main>
+      <Footer />
     </>
   );
 }
