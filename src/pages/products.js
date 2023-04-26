@@ -44,7 +44,7 @@ export default function Products() {
         name="Homesync Blog"
         className="pt-32 md:m-0 md:min-h-screen md:text-left lg:px-48 md:px-12 px-4 text-black bg-gray-100 animate-fadein"
       >
-        <h1 className="text-3xl font-semibold text-center md:text-left">Home Sync Blog</h1>
+        <h1 className="text-3xl font-semibold text-center md:text-left">Featured Products</h1>
         <Divider />
         <div className="flex flex-row flex-wrap lg:justify-start md:items-center justify-center">
           {loading ? (

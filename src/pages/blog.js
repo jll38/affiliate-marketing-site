@@ -33,7 +33,7 @@ export default function Blog() {
   return (
     <>
       <Head>
-        <title>HomeSync Blog</title>
+        <title>Home Sync Blog</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
