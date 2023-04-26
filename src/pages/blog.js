@@ -8,14 +8,18 @@ import BlogCard from "@/components/BlogCard";
 import { ca } from "date-fns/locale";
 import Featured from "@/components/featured";
 import { getBlog } from "../../sanity/sanity-utils";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import PlaceholderCard from "@/components/PlaceholderCard";
 
 export default function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchBlogPosts() {
       const posts = await getBlog();
       setBlogPosts(posts);
+      setLoading(false);
     }
 
     fetchBlogPosts();
@@ -34,13 +38,29 @@ export default function Blog() {
       <Navbar />
       <main
         name="Homesync Blog"
-        className="pt-24 md:m-0 md:min-h-screen md:text-left md:flex-row md:justify-between lg:px-48 md:px-12 px-4 text-black bg-gray-100 animate-fadein"
+        className="pt-24 md:m-0 md:min-h-screen md:text-left flex-row md:justify-center items-center lg:px-48 md:px-12 px-4 text-black bg-gray-100 animate-fadein divide-y-4"
       >
-        <div>blog posts</div>
-        {blogPosts.map((blog) => (
-
-          <BlogCard key={blog._id} date={blog._createAt} img={blog.image}>{blog.name}</BlogCard>
-        ))}
+        <h1 className="text-3xl">Home Sync Blog</h1>
+        {loading ? (
+          <>
+            <PlaceholderCard />
+            <PlaceholderCard />
+            <PlaceholderCard />
+          </>
+        ) : (
+          <>
+            {blogPosts.map((blog) => (
+              <BlogCard
+                key={blog._id}
+                date={blog._createdAt}
+                img={blog.image}
+                category={blog.category}
+              >
+                {blog.name}
+              </BlogCard>
+            ))}
+          </>
+        )}
       </main>
     </>
   );

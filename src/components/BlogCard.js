@@ -1,18 +1,19 @@
 import React from "react";
-
+import Date from "./date";
 function BlogCard({ ...props }) {
   return (
     <>
-      <div class="max-w-xs rounded overflow-hidden shadow-lg bg-white">
-        <img class="w-full h-52" src={props.img} alt="Sunset in the mountains"/>
-        <div class="px-6 pt-4">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+      <div className="max-w-sm rounded overflow-hidden">
+        <img className="w-full h-52" src={props.img} alt="Sunset in the mountains"/>
+        <div className="px-6 pt-4 divide-y">
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
             {props.category}
           </span>
+          
         </div>
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">{props.children}</div>
-          <p class="text-gray-700 text-base">{props.date}</p>
+        <div className="px-6 ">
+          <div className="font-bold text-xl mb-2">{props.children}</div>
+          <Date dateString={props.date}></Date>
         </div>
       </div>
     </>

@@ -10,12 +10,13 @@ export async function getBlog() {
   return client.fetch(
     groq`*[_type == "blog"]{
       _id,
-      _createAt,
+      _createdAt,
       name,
       "slug": slug.current,
+      category,
       "image": image.asset->url,
       url,
-      content
+      content,
     }`
   );
 }

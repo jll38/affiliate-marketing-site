@@ -6,6 +6,7 @@ import rehypeRaw from "rehype-raw";
 import { Navbar } from "@/components/Navbar";
 import Link from "next/link";
 import Image from "next/image";
+import blog from "../../../sanity/schemas/project-schema";
 
 const tailwindRenderer = {
   h1: (props) => <h1 as="h1" className="text-3xl text-bold my-5" {...props} />,

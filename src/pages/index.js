@@ -27,7 +27,7 @@ export default function Home() {
           <div className="pt-24 md:mt-0 md:h-screen flex justify-center text-center md:text-left md:flex-row md:justify-between items-center lg:px-48 md:px-12 px-4 backdrop-blur-sm bg-opacity-50 bg-gray-500">
             <div className="md:flex-1 md:mr-10 [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-center sm:my-20">
               <h1 className="font-pt-serif text-5xl font-bold mb-7 drop-shadow-md mb-0">
-                Empower your home
+                Empower Your Home
                 <br />
                 <span className="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100% text-red-500">
                   With Smart Solutions
@@ -41,7 +41,7 @@ export default function Home() {
                 <button onClick={() => {
                   window.location.assign('/blog');
                 }} className="bg-red-500/75 px-6 py-4 rounded-lg border-2 border-red-500/25 border-solid text-white mr-2 mb-2">
-                  View our Blog
+                  View Our Blog
                 </button>
               </div>
             </div>
