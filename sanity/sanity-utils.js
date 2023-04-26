@@ -85,6 +85,7 @@ export async function getBlogById(slug) {
       category,
       "image": image.asset->url,
       url,
+      content
     }`,
     { slug}
   );

@@ -8,7 +8,6 @@ function ProductCard(props) {
   });
   return (
     <ScaleOnHover>
-      <Link href='/'>
         <div className="max-w-xs h-[76] rounded overflow-hidden my-3">
           <img
             className="w-full px-6 max-h-52 aspect-square object-cover"
@@ -31,7 +30,6 @@ function ProductCard(props) {
             </div>
           </div>
         </div>
-      </Link>
     </ScaleOnHover>
   );
 }

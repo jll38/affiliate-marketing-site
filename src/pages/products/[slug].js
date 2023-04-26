@@ -1,41 +1,41 @@
 import { useRouter } from "next/router";
-import { getBlogById } from "../../../sanity/sanity-utils";
+import { getProductsById } from "../../../sanity/sanity-utils";
 import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import Head from "next/head";
 import TextPlaceholder from "@/components/TextPlaceholder";
 import Date from "@/components/date";
-import Divider from "@/components/Divider";
+import AmazonBox from "@/components/AmazonBox";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 
-function BlogPost() {
+function Product() {
   const router = useRouter();
   const { slug } = router.query;
-  const [blog, setBlog] = useState();
+  const [product, setProduct] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchBlogPosts() {
+    async function fetchProducts() {
       if (slug) {
-        const post = await getBlogById(slug);
+        const post = await getProductsById(slug);
         if (!post) {
           router.push("/blog/post-not-found");
         } else {
-          setBlog(post);
+          setProduct(post);
           setLoading(false);
         }
       }
     }
 
-    fetchBlogPosts();
+    fetchProducts();
   }, [slug]);
 
   return (
     <>
       <Head>
-        <title>Home Sync Hub</title>
+        <title>Featured Products</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
@@ -60,30 +60,30 @@ function BlogPost() {
                 <TextPlaceholder />
                 <TextPlaceholder />
                 <TextPlaceholder />
-                <TextPlaceholder />
-                <TextPlaceholder />
               </>
             ) : (
-              <article className="md:w-3/4 px-5">
-                <div name="Article Header" className="md:w-3/4">
-                  <img src={blog.image} className="rounded-xl shadow-md mb-5 md:w-3/4"></img>
+              <article className="md:w-3/4">
+                <div name="Product Header" className="md:w-3/4">
                   <h1 className="text-3xl font-semibold break-words">
-                    {blog.name}
+                    {product.name}
                   </h1>
-                  <Date dateString={blog._createdAt} className="text-left"></Date>
-                  <Divider class />
+                  <img
+                    src={product.image}
+                    className="rounded-xl shadow-md mb-5 md:w-3/4"
+                  ></img>
                 </div>
                 <div className="text-gray-800 md:w-3/4 break-words">
-                  <PortableText value={blog.content}/>
+                  <PortableText value={product.content} />
                 </div>
+                <AmazonBox></AmazonBox>
               </article>
             )}
           </div>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
 
-export default BlogPost;
+export default Product;
