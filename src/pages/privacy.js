@@ -11,7 +11,7 @@ function Privacy() {
         <title>Privacy Policy</title>
       </Head>
       <Navbar />
-      <main className="md:mt-0 md:min-h-screen bg-opacity-50 py-36 bg-gray-100 text-center">
+      <main className="md:mt-0 md:min-h-screen bg-opacity-50 py-36 bg-gray-100">
         <div className="text-gray-800 w-1/2 mx-auto">
           <div className="mb-5">
             <h1 className="text-4xl font-semibold ">
