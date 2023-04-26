@@ -7,13 +7,12 @@ import { Navbar } from "@/components/Navbar";
 import BlogCard from "@/components/BlogCard";
 import { ca } from "date-fns/locale";
 import Featured from "@/components/featured";
-import { getBlog } from "../../sanity/sanity-utils";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import { getProducts } from "../../sanity/sanity-utils";
 import PlaceholderCard from "@/components/PlaceholderCard";
 import Divider from "@/components/Divider";
 
-export default function Blog() {
-  const [blogPosts, setBlogPosts] = useState([]);
+export default function Products() {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const placeHolders = [];
   for(let i = 0; i < 20; i++){
@@ -21,19 +20,19 @@ export default function Blog() {
   }
 
   useEffect(() => {
-    async function fetchBlogPosts() {
-      const posts = await getBlog();
-      setBlogPosts(posts);
+    async function fetchProducts() {
+      const products = await getProducts();
+      setProducts(products);
       setLoading(false);
     }
 
-    fetchBlogPosts();
+    fetchProducts();
   }, []);
 
   return (
     <>
       <Head>
-        <title>HomeSync Blog</title>
+        <title>Featured Products</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
@@ -55,15 +54,8 @@ export default function Blog() {
             </>
           ) : (
             <>
-              {blogPosts.map((blog) => (
-                <BlogCard
-                  key={blog._id}
-                  date={blog._createdAt}
-                  img={blog.image}
-                  category={blog.category}
-                >
-                  {blog.name}
-                </BlogCard>
+              {products.map((product) => (
+                  <div key={product._id}>{product.name}</div>
               ))}
             </>
           )}
