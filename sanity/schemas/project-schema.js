@@ -6,18 +6,22 @@ const blog = {
         {
             name: 'name',
             title: 'Name',
-            type: 'string'
+            type: 'string',
+            validation: Rule => Rule.required().max(50).warning('Shorter titles are usually better'),
         },
         {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
-            options: {source: 'name'}
+            options: {source: 'name'},
+            validation: Rule => Rule.required()
+            
         },
         {
             name: 'category',
             title: 'Category',
-            type: 'string'
+            type: 'string',
+            validation: Rule => Rule.required()
         },
         {
             name: 'image',
@@ -30,18 +34,20 @@ const blog = {
                     title: 'Alt',
                     type: 'string'
                 }
-            ]
+            ],
+            validation: Rule => Rule.required()
         },
         {
             name: 'url',
             title: 'URL',
-            type: 'url'
+            type: 'url',
         },
         {
             name: 'content',
             title: "Content",
             type: "array",
             of: [{ type: "block"}],
+            validation: Rule => Rule.required(),
         }
     ]
 };
@@ -57,23 +63,26 @@ export const products = {
         name: "name",
         title: "Name",
         type: "string",
+        validation: Rule => Rule.required().max(50).warning('Shorter titles are usually better'),
       },
       {
         name: "slug",
         title: "Slug",
         type: "slug",
         options: { source: "name" },
+        validation: Rule => Rule.required(),
       },
       {
         name: "category",
         title: "Category",
-        type: "string"
+        type: "string",
+        validation: Rule => Rule.required(),
       },
       {
         name: "url",
         title: "URL",
-        type: "array",
-        of: [{ type: "url" }],
+        type: "url",
+        validation: Rule => Rule.required(),
       },
       {
         name: "image",
@@ -87,17 +96,20 @@ export const products = {
             type: "string",
           },
         ],
+        validation: Rule => Rule.required(),
       },
       {
         name: "content",
         title: "Content",
         type: "array",
         of: [{ type: "block" }],
+        validation: Rule => Rule.required()
       },
       {
         name: "price",
         title: "Price",
         type: "number",
+        validation: Rule => Rule.required()
       }
     ],
   };

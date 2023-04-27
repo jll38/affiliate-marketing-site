@@ -16,7 +16,6 @@ export async function getBlog() {
       category,
       "image": image.asset->url,
       url,
-      content
     }`
   );
 }
@@ -37,7 +36,6 @@ export async function getProducts() {
       "slug": slug.current,
       "image": image.asset->url,
       url,
-      content,
       price,
       category
     }`
@@ -60,7 +58,7 @@ export async function getProductsById(slug) {
       "slug": slug.current,
       "image": image.asset->url,
       url,
-      content,
+      category,
       content,
       price
     }`,
