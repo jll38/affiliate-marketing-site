@@ -10,7 +10,7 @@ function ProductCard(props) {
     <ScaleOnHover>
         <div className="max-w-xs h-[76] rounded overflow-hidden my-3">
           <img
-            className="w-full px-6 max-h-52 aspect-square object-cover"
+            className="w-full px-6 max-h-52 max-h-fit aspect-square object-scale-down"
             src={props.img}
             alt={props.alt}
           />

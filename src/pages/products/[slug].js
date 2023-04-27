@@ -95,7 +95,7 @@ function Product() {
                   {product && <PortableText value={product.content} />}
                 </div>
               </article>
-              <div className="flex-1 md:ml-5 mt-5 flex flex-col items-center">
+              <div className="flex-1 md:ml-5 flex flex-col items-center">
                 {suggestedProducts.map((prod) => {
                   return prod.category !== product.category || prod.slug === product.slug ? (
                     <></>
