@@ -49,6 +49,22 @@ const blog = {
             of: [{ type: "block"}],
             validation: Rule => Rule.required(),
         }
+    ],
+    orderings: [
+      {
+        title: 'Posted, New',
+        name: 'releaseDateDesc',
+        by: [
+          {field: '_createdAt', direction: 'desc'}
+        ]
+      },
+      {
+        title: 'Posted, Old',
+        name: 'releaseDateAsc',
+        by: [
+          {field: '_createdAt', direction: 'asc'}
+        ]
+      },
     ]
 };
 

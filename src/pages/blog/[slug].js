@@ -9,6 +9,7 @@ import Divider from "@/components/Divider";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
+import AmazonBox from "@/components/AmazonBox";
 
 function BlogPost() {
   const router = useRouter();
@@ -72,6 +73,7 @@ function BlogPost() {
                   </h1>
                   <Date dateString={blog._createdAt} className="text-left"></Date>
                   <Divider class />
+                  {blog.url && <AmazonBox link={blog.url}></AmazonBox>}
                 </div>
                 <div className="text-gray-800 md:w-3/4 break-words">
                   <PortableText value={blog.content}/>
