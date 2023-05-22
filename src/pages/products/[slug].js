@@ -79,11 +79,11 @@ function Product() {
             </>
           ) : (
             <>
-              <article className="flex-0 max-w-4xl">
+              <article className="flex flex-col mx-auto flex-0 max-w-2xl mb-10">
                 <div name="Product Header" className="mb-6">
                   <img
                     src={product.image}
-                    className="rounded-xl shadow-md mb-5 md:max-w-md"
+                    className=" mb-5 md:max-w-md "
                   ></img>
                   <h1 className="text-3xl font-semibold break-words">
                     {product.name}
@@ -91,12 +91,14 @@ function Product() {
                   <p className="text-gray-500">${product.price}</p>
                   {product.url && <AmazonBox link={product.url}></AmazonBox>}
                 </div>
-                <div className="text-gray-800 md:w-3/4 break-words">
+                <div className="text-gray-800 pr-5 break-words">
                   {product && <PortableText value={product.content} />}
                 </div>
               </article>
-              <div className="flex-1 md:ml-5 flex flex-col items-center">
-                {suggestedProducts.map((prod) => {
+              <div className=" md:ml-5 flex flex-col items-center xl:border-l-2 mx-auto max-w-2xl">
+                <div className="text-2xl font-semibold text-center">Related Products</div>
+                <div className="flex lg:flex-col sm:flex-row flex-col">
+                {suggestedProducts && suggestedProducts.map((prod) => {
                   return prod.category !== product.category || prod.slug === product.slug ? (
                     <></>
                   ) : (
@@ -111,6 +113,7 @@ function Product() {
                     </Link>
                   );
                 })}
+              </div>
               </div>
             </>
           )}
