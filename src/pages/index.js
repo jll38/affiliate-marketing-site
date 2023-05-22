@@ -4,6 +4,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import NewsletterSubscribe from "@/components/NewsletterSubscribe";
+import NewsletterForm from "@/components/NewsletterForm";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -18,6 +20,9 @@ export default function Home() {
         />
       </Head>
       <Navbar />
+      <div className="fixed z-50 bottom-0 p-5">
+        <NewsletterForm/>
+      </div>
       <main className="text-white animate-fadein">
         <section
           name="Hero"

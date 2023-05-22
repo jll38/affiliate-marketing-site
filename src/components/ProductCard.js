@@ -8,7 +8,7 @@ function ProductCard(props) {
   });
   return (
     <ScaleOnHover>
-        <div className="max-w-xs h-[76] rounded overflow-hidden my-3">
+        <div className="max-w-xs h-[76] rounded overflow-hidden my-3 flex flex-col">
           <img
             className="w-full px-6 max-h-52 max-h-fit aspect-square object-scale-down"
             src={props.img}
