@@ -14,6 +14,7 @@ export default function Document() {
         ></meta>
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
+        <script defer src="https://kit.fontawesome.com/a7908c27f8.js" crossorigin="anonymous"></script>
       </Head>
       <body>
         <Main />
