@@ -52,7 +52,7 @@ export default function Blog() {
         name="Homesync Blog"
         className="pt-32 md:m-0 md:min-h-screen md:text-left lg:px-40 md:px-12 px-4 text-black bg-gray-100 animate-fadein pb-10"
       >
-        <h1 className="text-6xl font-semibold text-center mb-5 text-gray-800">
+        <h1 className="text-4xl sm:text-6xl font-semibold text-center mb-5 text-gray-800">
           Home Sync Hub Blog
         </h1>
         <Divider />
