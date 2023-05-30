@@ -12,6 +12,7 @@ import Divider from "@/components/Divider";
 export default function Blog() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("none");
   const placeHolders = [];
   for (let i = 0; i < 20; i++) {
     placeHolders.push(<PlaceholderCard />);
@@ -26,6 +27,15 @@ export default function Blog() {
 
     fetchBlogPosts();
   }, []);
+
+  const handleFilter = (e) => {
+    const text = e.target.textContent;
+    if (text === filter) {
+      setFilter("none");
+    } else {
+      setFilter(text);
+    }
+  };
 
   return (
     <>
@@ -47,16 +57,53 @@ export default function Blog() {
         </h1>
         <Divider />
         <div className="flex justify-between mx-5">
-          <ul name="categories" className="flex gap-5 text-gray-600 child-hover:text-gray-900">
-            <li>Entertainment</li>
-            <li>Comfort</li>
-            <li>Security</li>
-            <li>Health & Wellness</li>
-          </ul>
+          <div
+            name="categories"
+            className="flex gap-5 text-gray-600 child-hover:text-gray-900"
+          >
+            <button
+              onClick={handleFilter}
+              className={`${
+                filter === "Entertainment" ? "bg-gray-200 rounded-lg" : ""
+              } px-2 `}
+            >
+              Entertainment
+            </button>
+            <button
+              onClick={handleFilter}
+              className={`${
+                filter === "Comfort" ? "bg-gray-200 rounded-lg" : ""
+              } px-2 `}
+            >
+              Comfort
+            </button>
+            <button
+              onClick={handleFilter}
+              className={`${
+                filter === "Home Security" ? "bg-gray-200 rounded-lg" : ""
+              } px-2 `}
+            >
+              Home Security
+            </button>
+            <button
+              onClick={handleFilter}
+              className={`${
+                filter === "Health & Wellness" ? "bg-gray-200 rounded-lg" : ""
+              } px-2 `}
+            >
+              Health & Wellness
+            </button>
+          </div>
           <ul name="socials" className="flex gap-2 text-red-600">
-            <li><i className="fa-brands fa-instagram"></i></li>
-            <li><i className="fa-brands fa-facebook"></i></li>
-            <li><i className="fa-brands fa-twitter"></i></li>
+            <li>
+              <i className="fa-brands fa-instagram"></i>
+            </li>
+            <li>
+              <i className="fa-brands fa-facebook"></i>
+            </li>
+            <li>
+              <i className="fa-brands fa-twitter"></i>
+            </li>
           </ul>
         </div>
         <Divider />
@@ -67,17 +114,23 @@ export default function Blog() {
             <>{placeHolders.map((placeholder) => placeholder)}</>
           ) : (
             <>
-              {blogPosts.map((blog) => (
-                <Link key={blog._id} href={"/blog/" + blog.slug}>
-                  <BlogCard
-                    date={blog._createdAt}
-                    img={blog.image}
-                    category={blog.category}
-                  >
-                    {blog.name}
-                  </BlogCard>
-                </Link>
-              ))}
+              {blogPosts.map((blog) => {
+                // Exclude products if filter is not "none" and the category matches the filter
+                if (filter !== "none" && blog.category !== filter) {
+                  return null;
+                }
+                return (
+                  <Link key={blog._id} href={"/blog/" + blog.slug}>
+                    <BlogCard
+                      date={blog._createdAt}
+                      img={blog.image}
+                      category={blog.category}
+                    >
+                      {blog.name}
+                    </BlogCard>
+                  </Link>
+                );
+              })}
             </>
           )}
         </div>

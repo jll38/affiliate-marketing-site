@@ -12,6 +12,7 @@ import ProductCard from "@/components/ProductCard";
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("none");
   const placeHolders = [];
   for (let i = 0; i < 20; i++) {
     placeHolders.push(<PlaceholderCard />);
@@ -27,6 +28,15 @@ export default function Products() {
 
     fetchProducts();
   }, []);
+
+  const handleFilter = (e) => {
+    const text = e.target.textContent;
+    if (text === filter) {
+      setFilter("none");
+    } else {
+      setFilter(text);
+    }
+  };
 
   return (
     <>
@@ -48,15 +58,15 @@ export default function Products() {
         </h1>
         <Divider />
         <div className="flex justify-between mx-5">
-          <ul
+          <div
             name="categories"
             className="flex gap-5 text-gray-600 child-hover:text-gray-900"
           >
-            <li>Entertainment</li>
-            <li>Comfort</li>
-            <li>Security</li>
-            <li>Health & Wellness</li>
-          </ul>
+            <button onClick={handleFilter} className={`${(filter === "Entertainment" ? ("bg-gray-200 rounded-lg") : (""))} px-2 `}>Entertainment</button>
+            <button onClick={handleFilter} className={`${(filter === "Comfort" ? ("bg-gray-200 rounded-lg") : (""))} px-2 `}>Comfort</button>
+            <button onClick={handleFilter} className={`${(filter === "Home Security" ? ("bg-gray-200 rounded-lg") : (""))} px-2 `}>Home Security</button>
+            <button onClick={handleFilter} className={`${(filter === "Health & Wellness" ? ("bg-gray-200 rounded-lg") : (""))} px-2 `}>Health & Wellness</button>
+          </div>
           <ul name="socials" className="flex gap-2 text-red-600">
             <li>
               <i className="fa-brands fa-instagram"></i>
@@ -70,23 +80,32 @@ export default function Products() {
           </ul>
         </div>
         <Divider />
-        <h1 className="text-2xl font-medium mt-5 text-gray-800">Featured Products</h1>
+        <h1 className="text-2xl font-medium mt-5 text-gray-800">
+          Featured Products
+        </h1>
         <div className="flex flex-row flex-wrap lg:justify-start md:items-center justify-center">
           {loading ? (
             <>{placeHolders.map((placeholder) => placeholder)}</>
           ) : (
             <>
-              {products.map((product) => (
-                <Link href={"/products/" + product.slug} key={product._id}>
-                  <ProductCard
-                    img={product.image}
-                    category={product.category}
-                    price={product.price}
-                  >
-                    {product.name}
-                  </ProductCard>
-                </Link>
-              ))}
+              {products.map((product) => {
+                // Exclude products if filter is not "none" and the category matches the filter
+                if (filter !== "none" && product.category !== filter) {
+                  return null;
+                }
+
+                return (
+                  <Link href={"/products/" + product.slug} key={product._id}>
+                    <ProductCard
+                      img={product.image}
+                      category={product.category}
+                      price={product.price}
+                    >
+                      {product.name}
+                    </ProductCard>
+                  </Link>
+                );
+              })}
             </>
           )}
         </div>
