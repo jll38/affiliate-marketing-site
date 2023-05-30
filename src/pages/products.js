@@ -69,13 +69,13 @@ export default function Products() {
           </div>
           <ul name="socials" className="flex gap-2 text-red-600">
             <li>
-              <i className="fa-brands fa-instagram"></i>
+              <a target="_blank" href="https://www.instagram.com/homesynchub/"><i className="fa-brands fa-instagram"></i></a>
             </li>
             <li>
-              <i className="fa-brands fa-facebook"></i>
+              <a href="#"><i className="fa-brands fa-facebook"></i></a>
             </li>
             <li>
-              <i className="fa-brands fa-twitter"></i>
+              <a href="#"><i className="fa-brands fa-twitter"></i></a>
             </li>
           </ul>
         </div>
