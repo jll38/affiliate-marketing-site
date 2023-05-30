@@ -57,25 +57,62 @@ export default function Products() {
           Home Sync Hub
         </h1>
         <Divider />
-        <div className="flex justify-between mx-5">
+        <div className="flex jusitfy-center items-center sm:justify-between mx-5 text-sm">
           <div
             name="categories"
-            className="flex gap-5 text-gray-600 child-hover:text-gray-900"
+            className="flex jusitfy-center items-center sm:gap-5 text-gray-600 child-hover:text-gray-900 flex-wrap"
           >
-            <button onClick={handleFilter} className={`${(filter === "Entertainment" ? ("bg-gray-200 rounded-lg") : (""))} px-2 `}>Entertainment</button>
-            <button onClick={handleFilter} className={`${(filter === "Comfort" ? ("bg-gray-200 rounded-lg") : (""))} px-2 `}>Comfort</button>
-            <button onClick={handleFilter} className={`${(filter === "Home Security" ? ("bg-gray-200 rounded-lg") : (""))} px-2 `}>Home Security</button>
-            <button onClick={handleFilter} className={`${(filter === "Health & Wellness" ? ("bg-gray-200 rounded-lg") : (""))} px-2 `}>Health & Wellness</button>
+            <button
+              onClick={handleFilter}
+              className={`${
+                filter === "Entertainment" ? "bg-gray-200 rounded-lg" : ""
+              } px-2 `}
+            >
+              Entertainment
+            </button>
+            <button
+              onClick={handleFilter}
+              className={`${
+                filter === "Comfort" ? "bg-gray-200 rounded-lg" : ""
+              } px-2 `}
+            >
+              Comfort
+            </button>
+            <button
+              onClick={handleFilter}
+              className={`${
+                filter === "Home Security" ? "bg-gray-200 rounded-lg" : ""
+              } px-2 `}
+            >
+              Home Security
+            </button>
+            <button
+              onClick={handleFilter}
+              className={`${
+                filter === "Health & Wellness" ? "bg-gray-200 rounded-lg" : ""
+              } px-2 `}
+            >
+              Health & Wellness
+            </button>
           </div>
-          <ul name="socials" className="flex gap-2 text-red-600">
+          <ul
+            name="socials"
+            className="flex gap-2 text-red-600 jusitfy-center text-xl sm:text-lg"
+          >
             <li>
-              <a target="_blank" href="https://www.instagram.com/homesynchub/"><i className="fa-brands fa-instagram"></i></a>
+              <a target="_blank" href="https://www.instagram.com/homesynchub/">
+                <i className="fa-brands fa-instagram"></i>
+              </a>
             </li>
             <li>
-              <a href="#"><i className="fa-brands fa-facebook"></i></a>
+              <a href="#">
+                <i className="fa-brands fa-facebook"></i>
+              </a>
             </li>
             <li>
-              <a href="#"><i className="fa-brands fa-twitter"></i></a>
+              <a href="#">
+                <i className="fa-brands fa-twitter"></i>
+              </a>
             </li>
           </ul>
         </div>
