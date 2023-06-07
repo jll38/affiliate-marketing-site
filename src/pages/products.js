@@ -97,7 +97,7 @@ export default function Products() {
           </div>
           <ul
             name="socials"
-            className="flex gap-2 6 jusitfy-center text-xl sm:text-lg"
+            className="flex gap-2 6 jusitfy-center text-xl sm:text-lg text-teal-600"
           >
             <li>
               <a target="_blank" href="https://www.instagram.com/homesynchub/">

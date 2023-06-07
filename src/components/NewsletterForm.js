@@ -76,7 +76,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
           </div>
           <div className="button-wrap wp-block-button">
             <button
-              className="border py-1 px-2 rounded-lg bg-red-400 text-white"
+              className="border py-1 px-2 rounded-lg bg-teal-700 text-white"
               onClick={handleFormSubmit}
             >
               Submit

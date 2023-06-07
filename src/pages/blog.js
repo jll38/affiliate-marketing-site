@@ -94,7 +94,7 @@ export default function Blog() {
               Health & Wellness
             </button>
           </div>
-          <ul name="socials" className="flex gap-2 text-green-600 jusitfy-center text-xl sm:text-lg">
+          <ul name="socials" className="flex gap-2 text-teal-600 jusitfy-center text-xl sm:text-lg">
             <li>
               <a target="_blank" href="https://www.instagram.com/homesynchub/"><i className="fa-brands fa-instagram"></i></a>
             </li>

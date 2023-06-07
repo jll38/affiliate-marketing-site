@@ -33,7 +33,7 @@ export default function Home() {
               <h1 className="font-pt-serif text-[4em] font-bold drop-shadow-md mb-0">
                 Empower Your Home
                 <br />
-                <span className="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100% text-green-700">
+                <span className="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100% text-teal-700">
                   With Smart Solutions
                 </span>
               </h1>
@@ -44,7 +44,7 @@ export default function Home() {
               <div className="font-montserrat ">
                 <button id="hero-cta" onClick={() => {
                   window.location.assign('/blog');
-                }} className="bg-white text-gray-800 px-6 py-4 border border-green-700 border-solid  mr-2 mb-2 hover:text-white hover:bg-green-700 hover:px-10 hover:py-5 transition-all duration-200">
+                }} className="bg-white text-gray-800 px-6 py-4 border-2 border-teal-700 border-solid  mr-2 mb-2 hover:text-white hover:bg-teal-700 hover:px-10 hover:py-5 transition-all duration-200">
                   Products
                 </button>
               </div>
