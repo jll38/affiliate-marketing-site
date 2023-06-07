@@ -26,14 +26,14 @@ export default function Home() {
       <main className="text-white animate-fadein">
         <section
           name="Hero"
-          className="bg-secondary bg-[url('https://images.pexels.com/photos/280232/pexels-photo-280232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-cover"
+          className="bg-secondary bg-[url('https://images.pexels.com/photos/280232/pexels-photo-280232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-cover "
         >
-          <div className="pt-24 md:mt-0 md:h-screen flex justify-center text-center md:text-left md:flex-row md:justify-between items-center lg:px-48 md:px-12 px-4 backdrop-blur-sm bg-opacity-50 bg-gray-500">
+          <div className="pt-24 md:mt-0 md:h-screen flex justify-center text-center md:text-left md:flex-row md:justify-between items-center lg:px-48 md:px-12 px-4 backdrop-blur-sm bg-opacity-50 bg-gray-500 h-[700px]">
             <div className="md:flex-1 md:mr-10 [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-center my-32">
-              <h1 className="font-pt-serif text-5xl font-bold mb-7 drop-shadow-md mb-0">
+              <h1 className="font-pt-serif text-[4em] font-bold drop-shadow-md mb-0">
                 Empower Your Home
                 <br />
-                <span className="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100% text-red-500">
+                <span className="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100% text-green-700">
                   With Smart Solutions
                 </span>
               </h1>
@@ -41,11 +41,11 @@ export default function Home() {
                 Discover Insights, Tips, and Reviews for a Connected,
                 Intelligent Living Space
               </p>
-              <div className="font-montserrat">
-                <button onClick={() => {
+              <div className="font-montserrat ">
+                <button id="hero-cta" onClick={() => {
                   window.location.assign('/blog');
-                }} className="bg-red-500/75 px-6 py-4 rounded-lg border-2 border-red-500/25 border-solid text-white mr-2 mb-2">
-                  View Our Blog
+                }} className="bg-white text-gray-800 px-6 py-4 border border-green-700 border-solid  mr-2 mb-2 hover:text-white hover:bg-green-700 hover:px-10 hover:py-5 transition-all duration-200">
+                  Products
                 </button>
               </div>
             </div>

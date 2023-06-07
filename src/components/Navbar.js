@@ -19,7 +19,7 @@ export function Navbar({}) {
         </div>
         <div className="flex child:transition-all child-hover:text-gray-800">
           <div className="flex items-center mx-5 text-gray-500 hover:underline">
-            <Link href="/about">Home</Link>
+            <Link href="/">Home</Link>
           </div>
           <div className="flex items-center mx-5 text-gray-500 hover:underline">
             <Link href="/products">Products</Link>
