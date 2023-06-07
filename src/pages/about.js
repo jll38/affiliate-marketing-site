@@ -1,8 +1,9 @@
 import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-
+import Divider from "@/components/Divider";
 import Head from "next/head";
+import Image from "next/image";
 function about(props) {
   return (
     <>
@@ -13,9 +14,10 @@ function about(props) {
       <main className="md:mt-0 md:min-h-screen bg-opacity-50 py-36 bg-gray-100">
         <div className="text-gray-800 w-1/2 mx-auto">
           <div className="mb-5">
-            <h1 className="text-4xl font-semibold ">
-              Introducing the Home Sync Hub
-            </h1>
+            <div>
+              <Image src="/images/logo.webp" width={400} height={50} />
+            </div>
+            <Divider />
           </div>
           Welcome to Home Sync Hub, your comprehensive destination for the
           latest advancements in smart home technology and automation. Our goal
