@@ -5,25 +5,31 @@ export function Navbar({}) {
   return (
     <>
       {" "}
-      <nav className="fixed flex justify-center py-1 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10 bg-white md:shadow-lg">
-        <div className="flex items-center mx-5 text-gray-500 hover:underline">
-          <Link href="/blog">Blog</Link>
-        </div>
-        <div className="flex items-center mx-5">
+      <nav className="fixed flex justify-between py-1 w-full px-10 content-center bg-secondary z-10 bg-white md:shadow-lg ">
+        <div className="flex justif mx-5">
           <Link href="/">
             <Image
-              src="/images/homesynchub.png"
+              src="/images/logo.webp"
               alt="Logo"
-              height="250"
-              width="70"
-              className="h-20 m-0"
+              height="50"
+              width="210"
+              className="h-12 m-0"
             />
           </Link>
         </div>
-        <div className="flex items-center mx-5 text-gray-500 hover:underline">
-          <Link href="/products">
-            Products
-          </Link>
+        <div className="flex child:transition-all child-hover:text-gray-800">
+          <div className="flex items-center mx-5 text-gray-500 hover:underline">
+            <Link href="/about">Home</Link>
+          </div>
+          <div className="flex items-center mx-5 text-gray-500 hover:underline">
+            <Link href="/products">Products</Link>
+          </div>
+          <div className="flex items-center mx-5 text-gray-500 hover:underline">
+            <Link href="/blog">Blog</Link>
+          </div>
+          <div className="flex items-center mx-5 text-gray-500 hover:underline">
+            <Link href="/about">About Us</Link>
+          </div>
         </div>
       </nav>
     </>
